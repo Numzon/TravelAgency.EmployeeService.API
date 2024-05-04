@@ -3,23 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.API", "TravelAgency.EmployeeService.API\TravelAgency.EmployeeService.API.csproj", "{B8B10C4D-726C-4094-A8AA-109E921F40F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAgency.EmployeeService.API", "TravelAgency.EmployeeService.API\TravelAgency.EmployeeService.API.csproj", "{B8B10C4D-726C-4094-A8AA-109E921F40F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8F15248B-B743-45AB-8DAA-E2E6AF241982}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{58C0EA78-91D1-4B25-A506-C0A4A0EE3F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.Application", "TravelAgency.EmployeeService.Application\TravelAgency.EmployeeService.Application.csproj", "{8D01142C-9A04-4FED-B62E-51F067B7A7AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAgency.EmployeeService.Application", "TravelAgency.EmployeeService.Application\TravelAgency.EmployeeService.Application.csproj", "{8D01142C-9A04-4FED-B62E-51F067B7A7AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.Domain", "TravelAgency.EmployeeService.Domain\TravelAgency.EmployeeService.Domain.csproj", "{10280522-6D8B-436C-AA44-A3F6B3DE779D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAgency.EmployeeService.Domain", "TravelAgency.EmployeeService.Domain\TravelAgency.EmployeeService.Domain.csproj", "{10280522-6D8B-436C-AA44-A3F6B3DE779D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.Infrastructure", "TravelAgency.EmployeeService.Infrastructure\TravelAgency.EmployeeService.Infrastructure.csproj", "{B87D7BB3-610C-4433-BA07-2B16A6D2D597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAgency.EmployeeService.Infrastructure", "TravelAgency.EmployeeService.Infrastructure\TravelAgency.EmployeeService.Infrastructure.csproj", "{B87D7BB3-610C-4433-BA07-2B16A6D2D597}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution items", "{720B4B7F-0110-4BA0-B435-A1A2E16B5D29}"
 	ProjectSection(SolutionItems) = preProject
 		nuget.config = nuget.config
 		README.txt = README.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.API.IntegrationTests", "TravelAgency.EmployeeService.API.IntegrationTests\TravelAgency.EmployeeService.API.IntegrationTests.csproj", "{E6CC6D3F-94FC-4E85-AE09-CC7C3DDEC290}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.Infrastructure.IntegrationTests", "TravelAgency.EmployeeService.Infrastructure.IntegrationTests\TravelAgency.EmployeeService.Infrastructure.IntegrationTests.csproj", "{F4E74E27-C116-417B-997B-115B246D615E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.API.UnitTests", "TravelAgency.EmployeeService.API.UnitTests\TravelAgency.EmployeeService.API.UnitTests.csproj", "{121A093F-DFA1-4335-B822-A1BA32513727}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.Infrastructure.UnitTests", "TravelAgency.EmployeeService.Infrastructure.UnitTests\TravelAgency.EmployeeService.Infrastructure.UnitTests.csproj", "{D05D56EF-602E-46B2-ADD3-C571CB9C0D40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.Application.UnitTests", "TravelAgency.EmployeeService.Application.UnitTests\TravelAgency.EmployeeService.Application.UnitTests.csproj", "{884C3C07-29CE-4518-AD6E-C46106E1E03B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.EmployeeService.Tests.Shared", "TravelAgency.EmployeeService.Tests.Shared\TravelAgency.EmployeeService.Tests.Shared.csproj", "{8A5369E7-1BF9-4068-BD09-C7E25D9D93C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +55,30 @@ Global
 		{B87D7BB3-610C-4433-BA07-2B16A6D2D597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B87D7BB3-610C-4433-BA07-2B16A6D2D597}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B87D7BB3-610C-4433-BA07-2B16A6D2D597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6CC6D3F-94FC-4E85-AE09-CC7C3DDEC290}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6CC6D3F-94FC-4E85-AE09-CC7C3DDEC290}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6CC6D3F-94FC-4E85-AE09-CC7C3DDEC290}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6CC6D3F-94FC-4E85-AE09-CC7C3DDEC290}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E74E27-C116-417B-997B-115B246D615E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E74E27-C116-417B-997B-115B246D615E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E74E27-C116-417B-997B-115B246D615E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E74E27-C116-417B-997B-115B246D615E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{121A093F-DFA1-4335-B822-A1BA32513727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121A093F-DFA1-4335-B822-A1BA32513727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121A093F-DFA1-4335-B822-A1BA32513727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121A093F-DFA1-4335-B822-A1BA32513727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D05D56EF-602E-46B2-ADD3-C571CB9C0D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D05D56EF-602E-46B2-ADD3-C571CB9C0D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D05D56EF-602E-46B2-ADD3-C571CB9C0D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D05D56EF-602E-46B2-ADD3-C571CB9C0D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884C3C07-29CE-4518-AD6E-C46106E1E03B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884C3C07-29CE-4518-AD6E-C46106E1E03B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{884C3C07-29CE-4518-AD6E-C46106E1E03B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{884C3C07-29CE-4518-AD6E-C46106E1E03B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5369E7-1BF9-4068-BD09-C7E25D9D93C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5369E7-1BF9-4068-BD09-C7E25D9D93C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5369E7-1BF9-4068-BD09-C7E25D9D93C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5369E7-1BF9-4068-BD09-C7E25D9D93C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +88,12 @@ Global
 		{8D01142C-9A04-4FED-B62E-51F067B7A7AD} = {8F15248B-B743-45AB-8DAA-E2E6AF241982}
 		{10280522-6D8B-436C-AA44-A3F6B3DE779D} = {8F15248B-B743-45AB-8DAA-E2E6AF241982}
 		{B87D7BB3-610C-4433-BA07-2B16A6D2D597} = {8F15248B-B743-45AB-8DAA-E2E6AF241982}
+		{E6CC6D3F-94FC-4E85-AE09-CC7C3DDEC290} = {58C0EA78-91D1-4B25-A506-C0A4A0EE3F51}
+		{F4E74E27-C116-417B-997B-115B246D615E} = {58C0EA78-91D1-4B25-A506-C0A4A0EE3F51}
+		{121A093F-DFA1-4335-B822-A1BA32513727} = {58C0EA78-91D1-4B25-A506-C0A4A0EE3F51}
+		{D05D56EF-602E-46B2-ADD3-C571CB9C0D40} = {58C0EA78-91D1-4B25-A506-C0A4A0EE3F51}
+		{884C3C07-29CE-4518-AD6E-C46106E1E03B} = {58C0EA78-91D1-4B25-A506-C0A4A0EE3F51}
+		{8A5369E7-1BF9-4068-BD09-C7E25D9D93C4} = {58C0EA78-91D1-4B25-A506-C0A4A0EE3F51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22BFC030-AC09-4AAC-B73E-59BDA84DCE1F}
