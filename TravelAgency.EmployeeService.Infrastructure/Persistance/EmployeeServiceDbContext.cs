@@ -2,7 +2,6 @@
 using Npgsql;
 using System.Data;
 using System.Data.Common;
-using TravelAgency.EmployeeService.Application.Common.Interfaces;
 using TravelAgency.EmployeeService.Application.Common.Models;
 
 namespace TravelAgency.EmployeeService.Infrastructure.Persistance;

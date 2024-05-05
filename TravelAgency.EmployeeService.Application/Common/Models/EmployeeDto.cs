@@ -1,8 +1,7 @@
-﻿using TravelAgency.EmployeeService.Domain.ValueObjects;
-
-namespace TravelAgency.EmployeeService.Application.Common.Models;
+﻿namespace TravelAgency.EmployeeService.Application.Common.Models;
 public class EmployeeDto
 {
+    public required int Id { get; set; }
     public required string UserId { get; set; }
     public required int TravelAgencyId { get; set; }
     public required string FirstName { get; set; }
