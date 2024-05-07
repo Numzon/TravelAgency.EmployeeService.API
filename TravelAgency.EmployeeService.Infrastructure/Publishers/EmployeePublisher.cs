@@ -1,5 +1,4 @@
 ﻿using Ardalis.Extensions.Serialization.Json;
-using TravelAgency.EmployeeService.Application.Common.Interfaces;
 using TravelAgency.EmployeeService.Application.Common.Models;
 using TravelAgency.SharedLibrary.Enums;
 using TravelAgency.SharedLibrary.RabbitMQ.Interfaces;

@@ -16,8 +16,14 @@ if (builder.Environment.IsDevelopment())
     builder.Services.AddAndConfigureSwagger(assembly.GetName().Name!);
 }
 
+if (builder.Environment.IsProduction())
+{
+    builder.Configuration.AddJsonFile("secrets/appsettings.Production.json", optional: true);
+}
+
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder);
+
 
 var app = builder.Build();
 

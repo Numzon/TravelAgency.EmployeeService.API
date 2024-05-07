@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using TravelAgency.EmployeeService.Application.Common.Interfaces;
 using TravelAgency.EmployeeService.Application.Employees.Commands;
 using TravelAgency.EmployeeService.Domain.Entities;
 using TravelAgency.EmployeeService.Domain.ValueObjects;
@@ -31,7 +30,7 @@ public sealed class EmployeeRepository : IEmployeeRepository
 
         using var connection = _context.CreateConnection();
 
-        var sql = "UPDATE employee SET userid = @UserId WHERE id = @Id";
+        var sql = "UPDATE employee SET user_id = @UserId WHERE id = @Id";
         await connection.ExecuteAsync(sql, new { userId, id = employeeId });
     }
 

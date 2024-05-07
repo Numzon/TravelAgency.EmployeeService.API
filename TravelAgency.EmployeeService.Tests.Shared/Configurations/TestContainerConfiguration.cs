@@ -24,8 +24,8 @@ public class TestContainerConfiguration : IDisposable
             .WithName("RabbitMqTests")
             .WithPortBinding(15600, 15672)
             .WithPortBinding(5600, 5672)
-            .WithUsername(null)
-            .WithPassword(null)
+            .WithUsername("admin")
+            .WithPassword("test.1234")
             .Build();
 
         PostgreSqlDatabase.StartAsync().Wait();

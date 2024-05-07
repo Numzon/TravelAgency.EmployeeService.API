@@ -1,6 +1,5 @@
 ﻿using Ardalis.Extensions.Serialization.Json;
 using Microsoft.Extensions.DependencyInjection;
-using TravelAgency.EmployeeService.Application.Common.Interfaces;
 using TravelAgency.EmployeeService.Application.Common.Models;
 using TravelAgency.SharedLibrary.RabbitMQ.Interfaces;
 
