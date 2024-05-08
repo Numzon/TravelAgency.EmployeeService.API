@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using TravelAgency.EmployeeService.Application.Employees.Commands;
+using TravelAgency.EmployeeService.Application.Employees.Commands.CreateEmployee;
 using TravelAgency.EmployeeService.Domain.Entities;
 using TravelAgency.EmployeeService.Domain.ValueObjects;
 
@@ -45,8 +45,11 @@ public sealed class EmployeeRepository : IEmployeeRepository
                             email AS {nameof(PersonalData.Email)},
                             id AS {nameof(Employee.Id)},
                             user_id AS {nameof(Employee.UserId)},
-                            salary_id AS {nameof(Employee.SalaryId)},
                             travel_agency_id AS {nameof(Employee.TravelAgencyId)},
+                            employee_type {nameof(Employee.EmployeeType)},
+                            custom_employee_type {nameof(Employee.CustomEmployeeType)},
+                            driving_licence_id AS {nameof(Employee.DrivingLicenceId)},
+                            salary_id AS {nameof(Employee.SalaryId)},
                             created AS {nameof(Employee.Created)},
                             created_by AS {nameof(Employee.CreatedBy)},
                             last_modified AS {nameof(Employee.LastModified)},
@@ -74,10 +77,14 @@ public sealed class EmployeeRepository : IEmployeeRepository
         paramenters.Add("last_name", request.LastName);
         paramenters.Add("travel_agency_id", request.TravelAgencyId);
         paramenters.Add("ammount", request.Ammount);
+        paramenters.Add("employee_type", request.EmployeeType);
+        paramenters.Add("custom_employee_type", request.CustomEmployeeType);
+        paramenters.Add("identifier", request.Identifier);
+        paramenters.Add("category_ids", request.CategoryIds);
         paramenters.Add("created", _dateTimeService.Now);
         paramenters.Add("created_by", _currentUserService.Id);
 
-        var sql = "select * from insert_employee_with_salary (@email, @first_name, @last_name, @travel_agency_id, @ammount::money, @created::timestamp, @created_by);";
+        var sql = "select * from insert_employee_data (@email, @first_name, @last_name, @travel_agency_id, @ammount::money, @employee_type, @custom_employee_type, @identifier, @category_ids, @created::timestamp, @created_by);";
         var employeeId = await connection.ExecuteScalarAsync<int>(sql, paramenters);
 
         return employeeId;

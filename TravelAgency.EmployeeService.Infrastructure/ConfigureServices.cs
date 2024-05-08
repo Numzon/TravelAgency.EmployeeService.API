@@ -21,8 +21,6 @@ public static class ConfigureServices
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, WebApplicationBuilder builder)
     {
-        //builder.Configuration.AddAndConfigureSecretManager(builder.Environment, RegionEndpoint.EUNorth1);
-
         services.Configure<DatabaseSettingsDto>(builder.Configuration.GetRequiredSection("Database"));
         services.AddSingleton<EmployeeServiceDbContext>();
         services.AddSingleton<IEmployeeServiceDbContext, EmployeeServiceDbContext>();
@@ -65,6 +63,7 @@ public static class ConfigureServices
     private static IServiceCollection RegisterRepositories(this IServiceCollection services)
     {
         services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
 
         return services;
     }

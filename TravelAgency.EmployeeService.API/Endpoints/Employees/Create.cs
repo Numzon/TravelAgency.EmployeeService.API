@@ -1,6 +1,6 @@
-﻿using TravelAgency.EmployeeService.Application.Employees.Commands;
+﻿using TravelAgency.EmployeeService.Application.Employees.Commands.CreateEmployee;
 
-namespace TravelAgency.EmployeeService.API.Endpoints.Employee;
+namespace TravelAgency.EmployeeService.API.Endpoints.Employees;
 
 public sealed class Create : EndpointBaseAsync.WithRequest<CreateEmployeeCommand>.WithResult<IResult>
 {
@@ -12,7 +12,7 @@ public sealed class Create : EndpointBaseAsync.WithRequest<CreateEmployeeCommand
     }
 
     [HttpPost("api/employees")]
-    [SwaggerOperation(Summary = "Create employee", Tags = new[] { "Employees" })]
+    [SwaggerOperation(Summary = "Creates employee", Tags = new[] { "Employees" })]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]

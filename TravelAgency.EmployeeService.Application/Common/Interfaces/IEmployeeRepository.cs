@@ -1,4 +1,4 @@
-﻿using TravelAgency.EmployeeService.Application.Employees.Commands;
+﻿using TravelAgency.EmployeeService.Application.Employees.Commands.CreateEmployee;
 using TravelAgency.EmployeeService.Domain.Entities;
 
 namespace TravelAgency.EmployeeService.Application.Common.Interfaces;

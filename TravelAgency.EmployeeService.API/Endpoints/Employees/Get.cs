@@ -1,6 +1,6 @@
 ﻿using TravelAgency.EmployeeService.Application.Employees.Queries.GetEmployee;
 
-namespace TravelAgency.EmployeeService.API.Endpoints.Employee;
+namespace TravelAgency.EmployeeService.API.Endpoints.Employees;
 
 public sealed class Get : EndpointBaseAsync.WithRequest<int>.WithResult<IResult>
 {
@@ -12,7 +12,7 @@ public sealed class Get : EndpointBaseAsync.WithRequest<int>.WithResult<IResult>
     }
 
     [HttpGet("api/employees/{id}")]
-    [SwaggerOperation(Summary = "Get employee", Tags = new[] { "Employees" })]
+    [SwaggerOperation(Summary = "Gets employee", Tags = new[] { "Employees" })]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]

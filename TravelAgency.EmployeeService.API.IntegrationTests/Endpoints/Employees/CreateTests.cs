@@ -9,19 +9,19 @@ using System.Net.Mime;
 using System.Text;
 using TravelAgency.EmployeeService.Application.Common.Interfaces;
 using TravelAgency.EmployeeService.Application.Common.Models;
-using TravelAgency.EmployeeService.Application.Employees.Commands;
+using TravelAgency.EmployeeService.Application.Employees.Commands.CreateEmployee;
 using TravelAgency.EmployeeService.Tests.Shared.Configurations;
 using TravelAgency.EmployeeService.Tests.Shared.Enums;
 
 namespace TravelAgency.EmployeeService.API.IntegrationTests.Endpoints.Employees;
-    
+
 [Collection(CollectionDefinitions.IntergrationTestCollection)]
 public sealed class CreateTests : BaseIntegrationTest
 {
     [Fact]
     public async Task HandleAsync_InvalidCommandData_ThrowsValidationException()
     {
-        var command = new CreateEmployeeCommand("", "", "", 0, 0);
+        var command = new CreateEmployeeCommand("", "", "", 0, 0, 0, null!, null!);
 
         using (TestServer = HostConfiguration.Build().Server)
         {
@@ -43,7 +43,7 @@ public sealed class CreateTests : BaseIntegrationTest
             exceptionDto!.Errors.Should().NotBeNull().And.HaveCountGreaterThan(0);
 
             var properties = typeof(CreateEmployeeCommand).Properties().Where(x => x.Name != "EqualityContract").Select(x => x.Name).ToList();
-            properties.ForEach(x => exceptionDto.Errors.Keys.Contains(x).Should().BeTrue());    
+            properties.ForEach(x => exceptionDto.Errors.Keys.Contains(x).Should().BeTrue());
 
             //cleanup
             await ResetDatabaseAsync();
@@ -81,7 +81,7 @@ public sealed class CreateTests : BaseIntegrationTest
 
             var exists = await connection.ExecuteScalarAsync<bool>("SELECT COUNT(1) FROM employee WHERE id = @id", new { id = exceptionDto.Id });
 
-            exists.Should().BeTrue();   
+            exists.Should().BeTrue();
 
             //cleanup
             await ResetDatabaseAsync();
