@@ -33,6 +33,7 @@ public static class ConfigureServices
         services.RegisterPublishers();
 
         services.Configure<AwsCognitoSettingsDto>(builder.Configuration.GetRequiredSection("AWS:Cognito"));
+
         services.Configure<RabbitMqSettingsDto>(builder.Configuration.GetRequiredSection("RabbitMQ"));
 
         var cognitoConfiguration = builder.Configuration.GetRequiredSection("AWS:Cognito").Get<AwsCognitoSettingsDto>()!;
@@ -52,6 +53,14 @@ public static class ConfigureServices
         var rabbitMqSettings = builder.Configuration.GetRequiredSection("RabbitMQ").Get<RabbitMqSettingsDto>()!;
 
         services.AddRabbitMqConfiguration(rabbitMqSettings);
+        //try
+        //{
+        //    services.AddRabbitMqConfiguration(rabbitMqSettings);
+        //}
+        //catch (Exception ex)
+        //{
+        //    Log.Error(ex.Message);
+        //}
 
         builder.Services.AddSingleton(EventStrategiesConfig.GetGlobalSettingsConfiguration());
 

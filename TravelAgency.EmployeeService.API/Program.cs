@@ -4,6 +4,8 @@ using TravelAgency.EmployeeService.Application;
 using TravelAgency.EmployeeService.Infrastructure;
 using TravelAgency.EmployeeService.Infrastructure.Persistance;
 using TravelAgency.SharedLibrary.Swagger;
+using TravelAgency.SharedLibrary.Vault;
+using TravelAgency.SharedLibrary.Vault.Consts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,12 +20,26 @@ if (builder.Environment.IsDevelopment())
 
 if (builder.Environment.IsProduction())
 {
-    builder.Configuration.AddJsonFile("secrets/appsettings.Production.json", optional: true);
+    var vaultBuilder = new VaultFacadeBuilder();
+
+    var vaultFacade = vaultBuilder
+                        .SetToken(Environment.GetEnvironmentVariable(VaultEnvironmentVariables.Token))
+                        .SetPort(Environment.GetEnvironmentVariable(VaultEnvironmentVariables.Port))
+                        .SetHost(Environment.GetEnvironmentVariable(VaultEnvironmentVariables.Host))
+                        .SetSSL(false)
+                        .Build();
+
+    var rabbitMq = await vaultFacade.ReadRabbitMqSecretAsync();
+    var database = await vaultFacade.ReadEmployeeServiceDatabaseSecretAsync();
+    var cognito = await vaultFacade.ReadCognitoSecretAsync();
+
+    builder.Configuration.AddInMemoryCollection(rabbitMq);
+    builder.Configuration.AddInMemoryCollection(database);
+    builder.Configuration.AddInMemoryCollection(cognito);
 }
 
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder);
-
 
 var app = builder.Build();
 
@@ -41,6 +57,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
